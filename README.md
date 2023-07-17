@@ -10,6 +10,7 @@ O projeto tem como foco a analise de compra de SKU's utilizando a metodologai cu
 * Linguagem T-SQL para tratamento dos dados e analise do cenario.
 
 ## :rocket: Rodando o projeto
+### ETL
 1. Os arquivos foram salvos em uma pasta na rede :
 
 ![0  Pasta na rede](https://github.com/RobertRSilva/CurvaABC/assets/76484099/4efd7516-db12-4c2a-b010-d282bacd9b34)
@@ -30,8 +31,15 @@ O projeto tem como foco a analise de compra de SKU's utilizando a metodologai cu
 ![Relacionamento com DW](https://github.com/RobertRSilva/CurvaABC/assets/76484099/0335feb3-455b-4842-8dbf-6c6e6e5332d1)
 
 
+### SIMULAÇÃO DE CENARIO
+Para Rodar o Cenario Brasil VALOR LIQUIDO E QUANTIDADE
 
-Para Rodar o Cenario Brasil VALOR LIQUIDO:
+* Foi Criado um uma variavel de periodos que pega ultimos 3 meses fechados;
+* Utilizei de algumas subquerys para tratar o dados:
+Foi utilizo o SUM com OVER() para calcular o total geral
+Foi utilizado o OVER(PARTITION BY) para realizado o agrupamento correto para calculo da CURVA.
+
+
 ```
 -- CENARIO BRASIL VALOR LIQUIDO
 
