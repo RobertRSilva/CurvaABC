@@ -12,12 +12,16 @@ O projeto tem como foco a analise de compra de SKU's utilizando a metodologai cu
 ## :rocket: Rodando o projeto
 1. Os arquivos foram salvos em uma pasta na rede :
 
-img src="![0  Pasta na rede](https://github.com/RobertRSilva/CurvaABC/assets/76484099/4efd7516-db12-4c2a-b010-d282bacd9b34)"
+![0  Pasta na rede](https://github.com/RobertRSilva/CurvaABC/assets/76484099/4efd7516-db12-4c2a-b010-d282bacd9b34)
 
 2. Foi Criado um Processo de ETL para consumir os dados no SSIS:
+![Processo de ETL ](https://github.com/RobertRSilva/CurvaABC/assets/76484099/a5d0a37c-4294-4f23-94fc-6722f51e1958)
 
 
 2.1 A Task "DELETE" exclui todos os registro dos dados da Dimensão ou Fato.
+
+
+
 2.2 A Task Fluxo de Integração Faz a o processo de maniuplação do dados para carregar no Database DW.
 
 
