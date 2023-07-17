@@ -167,5 +167,5 @@ FROM(
 						d1) d2
 ```
 ## :soon: Adendos
-* Nos projetos de integração utilizando dados de movimentação ( Vendas, Estoque, Titulos etc), utilizo o CDC CDC (captura de dados de alterações), que registra a atividade em um banco de dados quando tabelas e linhas foram modificadas. Isso me permite aproveitar melhor os recursos do ambiente e ter uma otimização no processo de carga tendo somente o incremento ou update dos dados.
+* Nos projetos de integração que que possuo dados de movimentação ( Vendas, Estoque, Titulos etc), utilizo o CDC (captura de dados de alterações), que registra a atividade em um banco de dados quando tabelas e linhas foram modificadas. Isso me permite aproveitar melhor os recursos do ambiente e ter uma otimização no processo de carga tendo somente o incremento ou update dos dados.
 
