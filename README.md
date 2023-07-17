@@ -19,7 +19,7 @@ O projeto tem como foco a analise de compra de SKU's utilizando a metodologai cu
 
 
 2.1 A Task "DELETE" exclui todos os registro dos dados da Dimensão ou Fato.
-
+![Exclui Registros](https://github.com/RobertRSilva/CurvaABC/assets/76484099/9290e18e-c33c-4212-a6d0-7becafb3ddc1)
 
 
 2.2 A Task Fluxo de Integração Faz a o processo de maniuplação do dados para carregar no Database DW.
