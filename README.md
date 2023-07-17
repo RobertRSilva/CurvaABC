@@ -1,7 +1,7 @@
 <h1 align="center">:file_cabinet: Exemplo de README.md</h1>
 
 ## :memo: Descrição
-Escreva uma descrição do seu projeto
+O projeto tem como foco a analise de compra de SKU's utilizando a metodologai curva ABC.
 
 ## :books: Funcionalidades
 * <b>Funcionalidade 1</b>: O que essa funcionalidade faz?
