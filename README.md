@@ -3,11 +3,9 @@
 ## :memo: Descrição
 O projeto tem como foco a analise de compra de SKU's utilizando a metodologai curva ABC.
 
-## :books: Funcionalidades
-* <b>Funcionalidade 1</b>: O que essa funcionalidade faz?
-
 ## :wrench: Tecnologias utilizadas
 * Tecnologia;
+* Utilizei o Integration Services como ferramenta de ETL para realizar a manipulação dos Dados. Simulando a captura desses arquivos em formato .csv de uma pasta na rede para envio a um banco SQL.
 
 ## :rocket: Rodando o projeto
 Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
