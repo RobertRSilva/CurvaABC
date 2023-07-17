@@ -1,11 +1,11 @@
-<h1 align="center">:file_cabinet: Exemplo de README.md</h1>
+<h1 align="center">:file_cabinet: Projeto Curva ABC.md</h1>
 
 ## :memo: Descrição
-O projeto tem como foco a analise de compra de SKU's utilizando a metodologai curva ABC.
+O projeto tem como foco a analise de compra de SKU's utilizando a metodologia curva ABC.
 
 ## :wrench: Tecnologias utilizadas
 
-* Integration Services como ferramenta de ETL para realizar a manipulação dos Dados. Simulando a captura desses arquivos em formato .csv de uma pasta na rede para envio a um banco SQL;
+* Integration Services (SSIS) como ferramenta de ETL para realizar a manipulação dos Dados. Simulando a captura desses arquivos em formato .csv de uma pasta na rede para envio a um banco SQL;
 * Banco SQL Server para simular um Datawarehouse
 * Linguagem T-SQL para tratamento dos dados e analise do cenario.
 
@@ -23,7 +23,7 @@ O projeto tem como foco a analise de compra de SKU's utilizando a metodologai cu
 ![Exclui Registros](https://github.com/RobertRSilva/CurvaABC/assets/76484099/9290e18e-c33c-4212-a6d0-7becafb3ddc1)
 
 
-2.2 A Task Fluxo de Integração Faz a o processo de maniuplação do dados para carregar no Database DW.
+2.2 A Task "Fluxo de Integração" faz a o processo de maniuplação do dados para carregar no Database DW.
 ![Fluxo de Integração](https://github.com/RobertRSilva/CurvaABC/assets/76484099/294f209c-52bb-48cd-9b2c-266470400f68)
 
 ![Arquivo Simples](https://github.com/RobertRSilva/CurvaABC/assets/76484099/fbc6b7dc-c046-42cf-ae52-c223a6f95ba1)
