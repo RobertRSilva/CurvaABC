@@ -25,6 +25,11 @@ O projeto tem como foco a analise de compra de SKU's utilizando a metodologai cu
 2.2 A Task Fluxo de Integração Faz a o processo de maniuplação do dados para carregar no Database DW.
 ![Fluxo de Integração](https://github.com/RobertRSilva/CurvaABC/assets/76484099/294f209c-52bb-48cd-9b2c-266470400f68)
 
+![Arquivo Simples](https://github.com/RobertRSilva/CurvaABC/assets/76484099/fbc6b7dc-c046-42cf-ae52-c223a6f95ba1)
+
+![Relacionamento com DW](https://github.com/RobertRSilva/CurvaABC/assets/76484099/0335feb3-455b-4842-8dbf-6c6e6e5332d1)
+
+
 
 Para Rodar o Cenario Brasil VALOR LIQUIDO:
 ```
