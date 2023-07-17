@@ -1,4 +1,4 @@
-<h1 align="center">:file_cabinet: Projeto Curva ABC.md</h1>
+<h1 align="center">:file_cabinet: Projeto Curva ABC.</h1>
 
 ## :memo: Descrição
 O projeto tem como foco a analise de compra de SKU's utilizando a metodologia curva ABC.
