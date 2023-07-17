@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "CurvaABC", "CurvaABC\CurvaABC.dtproj", "{9EC8AD1E-3491-4906-AC30-6BB90E8A4164}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9EC8AD1E-3491-4906-AC30-6BB90E8A4164}.Development|Default.ActiveCfg = Development
+		{9EC8AD1E-3491-4906-AC30-6BB90E8A4164}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D6D3342-4602-46DE-9F1D-8846AC936DB1}
+	EndGlobalSection
+EndGlobal

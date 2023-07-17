@@ -1,0 +1,2390 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/16/2023 8:42:44 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="FRT003-21X64"
+  DTS:CreatorName="FORTBRAS\robert.silva"
+  DTS:DTSID="{ACA8350F-CAEB-4E29-B1E0-48EE87690FC5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="FT_COMPRA"
+  DTS:PackageType="5"
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{A4807D52-2A7C-44F0-84DD-406A4D48C5F3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.3.245\hom.DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{005C7CBC-BF9A-48CF-863D-111FC238F844}"
+      DTS:ObjectName="192.168.3.245\hom.DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=192.168.3.245\hom;Initial Catalog=DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[dm_loja.csv]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{799405A4-56EE-4B18-B909-3355A984BF45}"
+      DTS:ObjectName="dm_loja.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\robert.silva\Documents\Teste_Engenheiro_de_Dados\dm_loja.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gerenciador de Conexões de Arquivos Simples]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{717142D4-16CB-4FEA-8B7C-DAA636A77165}"
+      DTS:ObjectName="Gerenciador de Conexões de Arquivos Simples">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x003B_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\robert.silva\Documents\Teste_Engenheiro_de_Dados\ft_compra.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="compra_id"
+              DTS:DTSID="{876EFDDC-023F-4E96-B832-25D9595AE846}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="loja_cnpj"
+              DTS:DTSID="{11D20DC7-EEBF-4CE2-B685-1280D82ABDE2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="distribuidor_cnpj_raiz"
+              DTS:DTSID="{B6E70ECE-02D8-4B37-BFE8-FA93BE447408}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="produto_ean"
+              DTS:DTSID="{06E85546-5001-4FC0-A158-96FE26DF0068}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dt_referencia"
+              DTS:DTSID="{FD5AA980-BDE0-43FA-81A2-47AED36008C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dt_dia"
+              DTS:DTSID="{3D7F7829-BA12-4345-94BC-4A9860F5B1C0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dt_mes"
+              DTS:DTSID="{1C846A89-0C96-4591-B946-BF1A256BD135}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dt_ano"
+              DTS:DTSID="{FEB3B47B-63FD-4FE3-909B-4AB5A7E92CE6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="anomes"
+              DTS:DTSID="{8659C5C3-9B9C-418F-9590-6F5171291C1B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="distribuidor_cnpj"
+              DTS:DTSID="{EFBB1705-CF24-48D7-89D7-015520C744ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="distribuidor_id"
+              DTS:DTSID="{BF89A814-1FAC-4CB2-9236-F57445A68CD0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="produto_ncm"
+              DTS:DTSID="{5D6290C8-6D14-43E9-958B-FEE9BDC31F0E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="produto_cod_anvisa"
+              DTS:DTSID="{31F75418-14A4-4048-AF5B-6FB2A939F471}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="uf_origem"
+              DTS:DTSID="{9A64D68C-3634-497F-B348-EDDBD8EEB7BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="aliquota_origem"
+              DTS:DTSID="{AE24BA11-C3F3-4A92-B21B-7C9455F9C503}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="icms_origem"
+              DTS:DTSID="{8C7BE875-F215-4A96-B492-54B3F174A88C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="icms"
+              DTS:DTSID="{A6D0E21B-CF15-40E2-A567-1CD453C8D261}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pf"
+              DTS:DTSID="{F5C56629-846D-48A9-80E4-11D880E972A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pmc"
+              DTS:DTSID="{9A5F5812-FDD8-4B67-8BA3-A3C83F5DE128}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="150"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nota_chave"
+              DTS:DTSID="{16D189FB-336C-4BE0-A349-BB1C32421B01}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nota_numero"
+              DTS:DTSID="{B27FFDE8-7565-4974-BE6D-5DA569DD86E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nota_tipo"
+              DTS:DTSID="{42CD385F-498E-4E3E-9E05-A1D5F2731307}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cfop"
+              DTS:DTSID="{D28F1DFF-ACF3-48D9-9F80-3C8C9D413FAE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="operacao"
+              DTS:DTSID="{456B8775-06BA-43E0-A077-B5B5C276842D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="st"
+              DTS:DTSID="{0A7BF083-9EFB-4E46-8821-2EE6C901C2C7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="stret"
+              DTS:DTSID="{2F59E0A5-2CB2-464A-A6BA-176ECFD42B49}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="frete"
+              DTS:DTSID="{F8707FDE-422C-4010-82A2-3006E7EA635B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ipi"
+              DTS:DTSID="{20B4AFB2-4B43-4274-BE1F-9C48FF16EB8B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="valor_impostos"
+              DTS:DTSID="{C5F626E3-46A9-439D-882D-A36573B04E3D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="valor_descontos"
+              DTS:DTSID="{7F0F5DDC-C1CB-4209-9B3A-F53ED6A1BF46}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="valor_outros"
+              DTS:DTSID="{AB3FF505-DA71-4946-B882-C0E2FA825386}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="unidade_trib"
+              DTS:DTSID="{5506C127-9C75-4D0A-8B63-3E41C05ABACD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="quantidade_trib"
+              DTS:DTSID="{47049277-05D2-45A1-8641-3C0EC1F2FFFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="valor_bruto"
+              DTS:DTSID="{58FCB341-37F2-44EF-B3DE-0CBD930C90A2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="valor_liquido"
+              DTS:DTSID="{2DD8C691-5F7E-4FA0-9D18-A4E6ABCE2EC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="valor_final"
+              DTS:DTSID="{239CC0EF-7B7E-40CB-8AA0-8060B09CD4D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dt_lancamento"
+              DTS:DTSID="{C293163B-9BFF-42AE-85AE-73D34D7D13E8}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Origem_dm_loja]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{245018CF-A072-408E-A6DD-13665E0DB9AC}"
+      DTS:ObjectName="Origem_dm_loja">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x003B_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\robert.silva\Documents\Teste_Engenheiro_de_Dados\dm_loja.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cnpj"
+              DTS:DTSID="{444C7DC9-3527-4885-9903-ACE058CE6CAE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="grupo_economico"
+              DTS:DTSID="{FAE1A7D7-6E7A-4E37-8323-906C44468589}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="rede"
+              DTS:DTSID="{3EB21A4E-C755-40FD-92C1-407A8C58E155}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="razao_social"
+              DTS:DTSID="{723067A8-628F-4BAD-BFC6-98C045D6F2C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fantasia"
+              DTS:DTSID="{BF7A6931-C199-458C-BA0D-5D6A83625A47}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{F01B549E-A762-46B2-BFB9-3E255BA392B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="data_inauguracao"
+              DTS:DTSID="{4113E98D-A6BC-4BF3-AD98-F4705F340055}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="data_desativacao"
+              DTS:DTSID="{B67064C2-F27B-4C77-93D5-B6B611029DDD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cidade"
+              DTS:DTSID="{B54BE2F2-5503-4861-A479-3BEA0F4318C7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="uf"
+              DTS:DTSID="{6D3E4467-E00D-45EF-A308-B6A8F0B7312B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="capital"
+              DTS:DTSID="{6DEBD0A9-BFBF-4604-8361-04CD83420335}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="regiao"
+              DTS:DTSID="{413D17D6-AF73-4DB1-92A5-CFF27827E802}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="associado"
+              DTS:DTSID="{E09FB5A9-0863-4C92-8744-7668B39D5BE1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="erp"
+              DTS:DTSID="{19CEF814-4E13-44A5-B748-A53567B6B115}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Origem_dm_produto]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7D0180FD-AA95-4C86-9710-38795AA69C3E}"
+      DTS:ObjectName="Origem_dm_produto">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x003B_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\robert.silva\Documents\Teste_Engenheiro_de_Dados\dm_produto.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ean"
+              DTS:DTSID="{1A660EA8-2735-4189-90FE-EA7DCED58969}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="grupo"
+              DTS:DTSID="{F4B417EB-77F0-4504-8459-F5DBAD7DAB7E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="produto"
+              DTS:DTSID="{632F4B0C-CA02-497F-8922-09467E14D828}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="laboratorio"
+              DTS:DTSID="{407A3D14-31DC-4835-A361-E59AC4CA40D7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C830EDD6-B6A9-4363-9E8C-9E0576C15FE2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ARQUIVO_LOCAL">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\robert.silva\Documents\Teste_Engenheiro_de_Dados\dm_loja.csv</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Contêiner da Sequência"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{B17D3601-E4C9-42AC-AED6-4CAAC533219A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Contêiner da Sequência">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Contêiner da Sequência\DELETE REGISTROS FT_COMPRA"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{839F01E3-236E-4CFC-BE95-FC3763DB8BED}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DELETE REGISTROS FT_COMPRA"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{005C7CBC-BF9A-48CF-863D-111FC238F844}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE FT_COMPRA" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contêiner da Sequência\Fluxo de Integração"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{EEE1B5EF-2A87-49E0-B4BE-9B0E27B7E365}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fluxo de Integração"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="Carrega no DW"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[FT_COMPRA]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[192.168.3.245\hom.DW]"
+                      connectionManagerRefId="Package.ConnectionManagers[192.168.3.245\hom.DW]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[compra_id]"
+                          cachedDataType="ui8"
+                          cachedName="compra_id"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[compra_id]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[compra_id]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[loja_cnpj]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="loja_cnpj"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[loja_cnpj]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[loja_cnpj]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[distribuidor_cnpj_raiz]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="distribuidor_cnpj_raiz"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[distribuidor_cnpj_raiz]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[distribuidor_cnpj_raiz]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[produto_ean]"
+                          cachedDataType="ui8"
+                          cachedName="produto_ean"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[produto_ean]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[produto_ean]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[dt_referencia]"
+                          cachedDataType="date"
+                          cachedName="dt_referencia"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[dt_referencia]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[dt_referencia]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[dt_dia]"
+                          cachedDataType="i4"
+                          cachedName="dt_dia"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[dt_dia]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[dt_dia]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[dt_mes]"
+                          cachedDataType="i4"
+                          cachedName="dt_mes"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[dt_mes]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[dt_mes]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[dt_ano]"
+                          cachedDataType="i4"
+                          cachedName="dt_ano"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[dt_ano]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[dt_ano]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[anomes]"
+                          cachedDataType="i4"
+                          cachedName="anomes"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[anomes]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[anomes]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[distribuidor_cnpj]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="distribuidor_cnpj"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[distribuidor_cnpj]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[distribuidor_cnpj]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[distribuidor_id]"
+                          cachedDataType="i4"
+                          cachedName="distribuidor_id"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[distribuidor_id]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[distribuidor_id]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[produto_ncm]"
+                          cachedDataType="ui8"
+                          cachedName="produto_ncm"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[produto_ncm]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[produto_ncm]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[produto_cod_anvisa]"
+                          cachedDataType="i8"
+                          cachedName="produto_cod_anvisa"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[produto_cod_anvisa]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[produto_cod_anvisa]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[uf_origem]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="uf_origem"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[uf_origem]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[uf_origem]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[aliquota_origem]"
+                          cachedDataType="decimal"
+                          cachedName="aliquota_origem"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[aliquota_origem]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[aliquota_origem]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[icms_origem]"
+                          cachedDataType="decimal"
+                          cachedName="icms_origem"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[icms_origem]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[icms_origem]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[icms]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="icms"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[icms]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[icms]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[pf]"
+                          cachedDataType="decimal"
+                          cachedName="pf"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[pf]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[pf]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[pmc]"
+                          cachedDataType="decimal"
+                          cachedName="pmc"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[pmc]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[pmc]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[nota_chave]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="nota_chave"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[nota_chave]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[nota_chave]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[nota_numero]"
+                          cachedDataType="i4"
+                          cachedName="nota_numero"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[nota_numero]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[nota_numero]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[nota_tipo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="nota_tipo"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[nota_tipo]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[nota_tipo]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[cfop]"
+                          cachedDataType="i4"
+                          cachedName="cfop"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[cfop]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[cfop]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[operacao]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="operacao"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[operacao]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[operacao]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[st]"
+                          cachedDataType="decimal"
+                          cachedName="st"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[st]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[st]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[stret]"
+                          cachedDataType="decimal"
+                          cachedName="stret"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[stret]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[stret]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[frete]"
+                          cachedDataType="decimal"
+                          cachedName="frete"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[frete]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[frete]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[ipi]"
+                          cachedDataType="decimal"
+                          cachedName="ipi"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[ipi]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[ipi]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[valor_impostos]"
+                          cachedDataType="decimal"
+                          cachedName="valor_impostos"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_impostos]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_impostos]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[valor_descontos]"
+                          cachedDataType="decimal"
+                          cachedName="valor_descontos"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_descontos]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_descontos]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[valor_outros]"
+                          cachedDataType="decimal"
+                          cachedName="valor_outros"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_outros]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_outros]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[unidade_trib]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="unidade_trib"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[unidade_trib]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[unidade_trib]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[quantidade_trib]"
+                          cachedDataType="decimal"
+                          cachedName="quantidade_trib"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[quantidade_trib]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[quantidade_trib]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[valor_bruto]"
+                          cachedDataType="decimal"
+                          cachedName="valor_bruto"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_bruto]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_bruto]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[valor_liquido]"
+                          cachedDataType="decimal"
+                          cachedName="valor_liquido"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_liquido]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_liquido]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[valor_final]"
+                          cachedDataType="decimal"
+                          cachedName="valor_final"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_final]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_final]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].Columns[dt_lancamento]"
+                          cachedDataType="date"
+                          cachedName="dt_lancamento"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[dt_lancamento]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[dt_lancamento]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[compra_id]"
+                          dataType="numeric"
+                          name="compra_id"
+                          precision="20" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[loja_cnpj]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="loja_cnpj" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[distribuidor_cnpj_raiz]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="distribuidor_cnpj_raiz" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[produto_ean]"
+                          dataType="numeric"
+                          name="produto_ean"
+                          precision="20" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[dt_referencia]"
+                          dataType="dbTimeStamp"
+                          name="dt_referencia" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[dt_dia]"
+                          dataType="i4"
+                          name="dt_dia" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[dt_mes]"
+                          dataType="i4"
+                          name="dt_mes" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[dt_ano]"
+                          dataType="i4"
+                          name="dt_ano" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[anomes]"
+                          dataType="i4"
+                          name="anomes" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[distribuidor_cnpj]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="distribuidor_cnpj" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[distribuidor_id]"
+                          dataType="i4"
+                          name="distribuidor_id" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[produto_ncm]"
+                          dataType="numeric"
+                          name="produto_ncm"
+                          precision="20" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[produto_cod_anvisa]"
+                          dataType="i8"
+                          name="produto_cod_anvisa" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[uf_origem]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="uf_origem" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[aliquota_origem]"
+                          dataType="numeric"
+                          name="aliquota_origem"
+                          precision="28"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[icms_origem]"
+                          dataType="numeric"
+                          name="icms_origem"
+                          precision="28"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[icms]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="icms" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[pf]"
+                          dataType="numeric"
+                          name="pf"
+                          precision="28"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[pmc]"
+                          dataType="numeric"
+                          name="pmc"
+                          precision="28"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[nota_chave]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="nota_chave" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[nota_numero]"
+                          dataType="i4"
+                          name="nota_numero" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[nota_tipo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="nota_tipo" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[cfop]"
+                          dataType="i4"
+                          name="cfop" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[operacao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="operacao" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[st]"
+                          dataType="numeric"
+                          name="st"
+                          precision="28"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[stret]"
+                          dataType="numeric"
+                          name="stret"
+                          precision="28"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[frete]"
+                          dataType="numeric"
+                          name="frete"
+                          precision="28"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[ipi]"
+                          dataType="numeric"
+                          name="ipi"
+                          precision="28"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_impostos]"
+                          dataType="numeric"
+                          name="valor_impostos"
+                          precision="28"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_descontos]"
+                          dataType="numeric"
+                          name="valor_descontos"
+                          precision="28"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_outros]"
+                          dataType="numeric"
+                          name="valor_outros"
+                          precision="28"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[unidade_trib]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="unidade_trib" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[quantidade_trib]"
+                          dataType="numeric"
+                          name="quantidade_trib"
+                          precision="28"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_bruto]"
+                          dataType="numeric"
+                          name="valor_bruto"
+                          precision="28"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_liquido]"
+                          dataType="numeric"
+                          name="valor_liquido"
+                          precision="28"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[valor_final]"
+                          dataType="numeric"
+                          name="valor_final"
+                          precision="28"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[dt_lancamento]"
+                          dataType="dbTimeStamp"
+                          name="dt_lancamento" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Origem de Arquivo Simples;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origem de Arquivo Simples"
+                  localeId="1033"
+                  name="Origem de Arquivo Simples"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica se colunas de comprimento zero são tratadas como nulas."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome de uma coluna de saída que contém o nome do arquivo. Se nenhum nome for especificado, nenhuma coluna de saída contendo o nome de arquivo será gerada."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Gerenciador de Conexões de Arquivos Simples]"
+                      connectionManagerRefId="Package.ConnectionManagers[Gerenciador de Conexões de Arquivos Simples]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples]"
+                      name="Saída de Origem de Arquivo Simples">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[compra_id]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[compra_id]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[compra_id]"
+                          name="compra_id"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[loja_cnpj]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[loja_cnpj]"
+                          length="50"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[loja_cnpj]"
+                          name="loja_cnpj"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[distribuidor_cnpj_raiz]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[distribuidor_cnpj_raiz]"
+                          length="50"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[distribuidor_cnpj_raiz]"
+                          name="distribuidor_cnpj_raiz"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[produto_ean]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[produto_ean]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[produto_ean]"
+                          name="produto_ean"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[dt_referencia]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[dt_referencia]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[dt_referencia]"
+                          name="dt_referencia"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[dt_dia]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[dt_dia]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[dt_dia]"
+                          name="dt_dia"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[dt_mes]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[dt_mes]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[dt_mes]"
+                          name="dt_mes"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[dt_ano]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[dt_ano]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[dt_ano]"
+                          name="dt_ano"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[anomes]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[anomes]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[anomes]"
+                          name="anomes"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[distribuidor_cnpj]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[distribuidor_cnpj]"
+                          length="50"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[distribuidor_cnpj]"
+                          name="distribuidor_cnpj"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[distribuidor_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[distribuidor_id]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[distribuidor_id]"
+                          name="distribuidor_id"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[produto_ncm]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[produto_ncm]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[produto_ncm]"
+                          name="produto_ncm"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[produto_cod_anvisa]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[produto_cod_anvisa]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[produto_cod_anvisa]"
+                          name="produto_cod_anvisa"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[uf_origem]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[uf_origem]"
+                          length="50"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[uf_origem]"
+                          name="uf_origem"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[aliquota_origem]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[aliquota_origem]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[aliquota_origem]"
+                          name="aliquota_origem"
+                          scale="2"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[icms_origem]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[icms_origem]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[icms_origem]"
+                          name="icms_origem"
+                          scale="2"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[icms]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[icms]"
+                          length="50"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[icms]"
+                          name="icms"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[pf]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[pf]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[pf]"
+                          name="pf"
+                          scale="2"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[pmc]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[pmc]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[pmc]"
+                          name="pmc"
+                          scale="2"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[nota_chave]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[nota_chave]"
+                          length="150"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[nota_chave]"
+                          name="nota_chave"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[nota_numero]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[nota_numero]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[nota_numero]"
+                          name="nota_numero"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[nota_tipo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[nota_tipo]"
+                          length="50"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[nota_tipo]"
+                          name="nota_tipo"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[cfop]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[cfop]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[cfop]"
+                          name="cfop"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[operacao]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[operacao]"
+                          length="50"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[operacao]"
+                          name="operacao"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[st]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[st]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[st]"
+                          name="st"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[stret]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[stret]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[stret]"
+                          name="stret"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[frete]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[frete]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[frete]"
+                          name="frete"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[ipi]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[ipi]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[ipi]"
+                          name="ipi"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_impostos]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[valor_impostos]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_impostos]"
+                          name="valor_impostos"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_descontos]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[valor_descontos]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_descontos]"
+                          name="valor_descontos"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_outros]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[valor_outros]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_outros]"
+                          name="valor_outros"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[unidade_trib]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[unidade_trib]"
+                          length="50"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[unidade_trib]"
+                          name="unidade_trib"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[quantidade_trib]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[quantidade_trib]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[quantidade_trib]"
+                          name="quantidade_trib"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_bruto]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[valor_bruto]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_bruto]"
+                          name="valor_bruto"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_liquido]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[valor_liquido]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_liquido]"
+                          name="valor_liquido"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_final]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[valor_final]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[valor_final]"
+                          name="valor_final"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[dt_lancamento]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[dt_lancamento]"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[dt_lancamento]"
+                          name="dt_lancamento"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[compra_id]"
+                          dataType="ui8"
+                          name="compra_id" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[loja_cnpj]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="loja_cnpj" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[distribuidor_cnpj_raiz]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="distribuidor_cnpj_raiz" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[produto_ean]"
+                          dataType="ui8"
+                          name="produto_ean" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[dt_referencia]"
+                          dataType="date"
+                          name="dt_referencia" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[dt_dia]"
+                          dataType="i4"
+                          name="dt_dia" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[dt_mes]"
+                          dataType="i4"
+                          name="dt_mes" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[dt_ano]"
+                          dataType="i4"
+                          name="dt_ano" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[anomes]"
+                          dataType="i4"
+                          name="anomes" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[distribuidor_cnpj]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="distribuidor_cnpj" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[distribuidor_id]"
+                          dataType="i4"
+                          name="distribuidor_id" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[produto_ncm]"
+                          dataType="ui8"
+                          name="produto_ncm" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[produto_cod_anvisa]"
+                          dataType="i8"
+                          name="produto_cod_anvisa" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[uf_origem]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="uf_origem" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[aliquota_origem]"
+                          dataType="decimal"
+                          name="aliquota_origem"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[icms_origem]"
+                          dataType="decimal"
+                          name="icms_origem"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[icms]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="icms" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[pf]"
+                          dataType="decimal"
+                          name="pf"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[pmc]"
+                          dataType="decimal"
+                          name="pmc"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[nota_chave]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="nota_chave" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[nota_numero]"
+                          dataType="i4"
+                          name="nota_numero" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[nota_tipo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="nota_tipo" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[cfop]"
+                          dataType="i4"
+                          name="cfop" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[operacao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="operacao" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[st]"
+                          dataType="decimal"
+                          name="st"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[stret]"
+                          dataType="decimal"
+                          name="stret"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[frete]"
+                          dataType="decimal"
+                          name="frete"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[ipi]"
+                          dataType="decimal"
+                          name="ipi"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[valor_impostos]"
+                          dataType="decimal"
+                          name="valor_impostos"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[valor_descontos]"
+                          dataType="decimal"
+                          name="valor_descontos"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[valor_outros]"
+                          dataType="decimal"
+                          name="valor_outros"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[unidade_trib]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="unidade_trib" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[quantidade_trib]"
+                          dataType="decimal"
+                          name="quantidade_trib"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[valor_bruto]"
+                          dataType="decimal"
+                          name="valor_bruto"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[valor_liquido]"
+                          dataType="decimal"
+                          name="valor_liquido"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[valor_final]"
+                          dataType="decimal"
+                          name="valor_final"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[dt_lancamento]"
+                          dataType="date"
+                          name="dt_lancamento" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Erro de Origem de Arquivo Simples]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem de Arquivo Simples">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Coluna de Saída de Erro de Origem de Arquivo Simples"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                          name="Coluna de Saída de Erro de Origem de Arquivo Simples" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contêiner da Sequência\Fluxo de Integração.Paths[Saída de Origem de Arquivo Simples]"
+                  endId="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Origem de Arquivo Simples"
+                  startId="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contêiner da Sequência\Remover Arquivo Destino Local"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="Remover arquivos do Local"
+          DTS:Disabled="True"
+          DTS:DTSID="{A4EF6758-F07A-4F21-AE93-C58AA65F17C1}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Remover Arquivo Destino Local"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="DeleteFile"
+              TaskSourcePath="User::ARQUIVO_LOCAL"
+              TaskIsSourceVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contêiner da Sequência.PrecedenceConstraints[Restrição]"
+          DTS:CreationName=""
+          DTS:DTSID="{9BC09991-86A6-4439-B4C8-BBD9AE9E1A16}"
+          DTS:From="Package\Contêiner da Sequência\Remover Arquivo Destino Local"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição"
+          DTS:To="Package\Contêiner da Sequência\DELETE REGISTROS FT_COMPRA" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contêiner da Sequência.PrecedenceConstraints[Restrição 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{6D6DF4C7-4EAC-44D3-A283-F733C64ECD09}"
+          DTS:From="Package\Contêiner da Sequência\DELETE REGISTROS FT_COMPRA"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 1"
+          DTS:To="Package\Contêiner da Sequência\Fluxo de Integração" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="260,42"
+          Id="Package\Contêiner da Sequência\DELETE REGISTROS FT_COMPRA"
+          TopLeft="163,103" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Contêiner da Sequência\Fluxo de Integração"
+          TopLeft="208,202" />
+        <NodeLayout
+          Size="261,42"
+          Id="Package\Contêiner da Sequência\Remover Arquivo Destino Local"
+          TopLeft="167,14" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência.PrecedenceConstraints[Restrição]"
+          TopLeft="295.25,56">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência.PrecedenceConstraints[Restrição 1]"
+          TopLeft="294.5,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="575,330"
+          Size="575,373"
+          Id="Package\Contêiner da Sequência"
+          TopLeft="84,23" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Contêiner da Sequência\Fluxo de Integração">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Contêiner da Sequência\Fluxo de Integração\Origem de Arquivo Simples"
+          TopLeft="256,55" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW"
+          TopLeft="288,154" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\Fluxo de Integração.Paths[Saída de Origem de Arquivo Simples]"
+          TopLeft="364,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contêiner da Sequência\Fluxo de Integração\Carrega no DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
