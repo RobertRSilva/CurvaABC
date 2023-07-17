@@ -158,21 +158,6 @@ FROM(
 		,C.PRODUTO) d) 
 						d1) d2
 ```
-## :soon: Implementação futura
-* O que será implementado na próxima sprint?
+## :soon: Adendos
+* Nos projetos de integração utilizando dados de movimentação ( Vendas, Estoque, Titulos etc), utilizo o CDC CDC (captura de dados de alterações), que registra a atividade em um banco de dados quando tabelas e linhas foram modificadas. Isso me permite aproveitar melhor os recursos do ambiente e ter uma otimização no processo de carga tendo somente o incremento ou update dos dados.
 
-## :handshake: Colaboradores
-<table>
-  <tr>
-    <td align="center">
-      <a href="http://github.com/tatialveso">
-        <img src="https://avatars.githubusercontent.com/u/56259137?v=4" width="100px;" alt="Foto de Tati Alves no GitHub"/><br>
-        <sub>
-          <b>tatialveso</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
-
-## :dart: Status do projeto
